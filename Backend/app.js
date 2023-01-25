@@ -2,10 +2,9 @@ const { ApolloServer } = require("apollo-server");
 const graphqlSchema = require("./graphql/schema");
 const graphqlResolver = require("./graphql/resolvers");
 const mongoose = require("mongoose");
-const MONGODB = 'mongodb+srv://raghavpatidar:raghav9977649723patidar@cluster0.masm8ak.mongodb.net/?retryWrites=true&w=majority';
-// "mongodb://localhost:27017/graphlq"
+require('dotenv').config()
 mongoose
-  .connect(MONGODB, {
+  .connect(process.env.MONGODB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
